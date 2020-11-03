@@ -70,11 +70,6 @@ class DoublyLinkedList:
         self.head = self.head.next
 
     def delete_tail(self):
-        # current_node = self.head
-        # while current_node.next != self.tail:
-        #     current_node = current_node.next
-        # current_node.next = None
-        
         current = self.head
         previous = current
         while current.next != None:
@@ -89,23 +84,22 @@ class DoublyLinkedList:
         current = self.head
         while current.next is not None:
             if current.next.data["title"] == data.data:
-                current.next = current.next.next 
+                if current.next.next == None:
+                    self.tail = current.next
+                current.next = current.next.next
                 break
             current = current.next
 
-    #TODO: Hacer funcionar esto!!
     def reverse(self):
         current = self.tail
         temp = self.head
         self.head = current
         while current is not None:
-            #current.previous = current.next
             current.next = current.previous
             current.previous = current
 
             current = current.next
         self.tail = temp
-        #print(temp.data)
         if temp.next != None:
             temp.next.next = self.tail
         temp.next = None

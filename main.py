@@ -27,31 +27,26 @@ pl.append({
     "genre":"Alternative Rock",
 })
 
-pl.append({
+pl.append({ # TAIL
     "title":"How to Fly",
     "artist":"Sticky Fingers",
     "genre":"Alternative Rock",
 })
 
-pl.prepend({
+pl.prepend({ # HEAD
     "title":"Jigsaw Falling Into Pieces",
     "artist":"Radiohead",
     "genre":"Experimental Rock",
 })
 
 
-# pl.update("In the Court of the Crimson King", {
-#     "title":"dawdwadw",
-#     "artist":"King Crimson",
-#     "genre":"Progressive Rock",
-# })
-#pl.delete("How to Fly")
-
-
-#pl.delete_head()
+pl.delete_head()
 pl.delete_tail()
 pl.find("How to Fly")
+pl.delete("Notion")
 
 pl.print_whole()
+print("REVERSE:")
 pl.reverse()
 pl.print_whole()
+pl.print_songs()
